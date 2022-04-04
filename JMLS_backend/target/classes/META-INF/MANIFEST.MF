@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: JMLS
+Implementation-Version: 1.0
+Built-By: chino
+Implementation-Vendor-Id: JMlessous
+Build-Jdk: 1.8.0_202
+Implementation-URL: https://spring.io/projects/spring-boot/JMLS
+Created-By: Maven Integration for Eclipse
+

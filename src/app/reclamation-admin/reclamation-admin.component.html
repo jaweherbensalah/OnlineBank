@@ -1,0 +1,31 @@
+<mat-tab-group mat-align-tabs="start">
+
+  <mat-tab label="Afficher toutes les réclamations">
+    <p-table [value]="Reclamations" responsiveLayout="scroll" >
+          
+      <ng-template pTemplate="header">
+          <tr>
+              <th *ngFor="let col of cols" >
+                <center> {{col.header}}</center> 
+              </th>
+              <th><center>Action</center></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+          <tr *ngFor="let rec of Reclamations">
+              <td *ngFor="let col of cols">
+                <center> {{user[col.field]}}</center> 
+              </td>
+            
+            <td>
+                <button (click) = "updateEmployee(rec.id)" class = "btn btn-primary" style="margin-left: 10px"> traiter</button>
+                <button (click) = "employeeDetails(rec.id)" class = "btn btn-info" style="margin-left: 10px"> détails</button>
+                <button (click) = "deleteEmployee(rec.id)" class = "btn btn-danger" style="margin-left: 10px"> supprimer</button>
+
+            </td>
+          </tr>
+      </ng-template>
+  </p-table>
+    
+  </mat-tab>
+  </mat-tab-group>

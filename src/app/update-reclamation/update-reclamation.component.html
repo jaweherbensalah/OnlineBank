@@ -1,0 +1,38 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Modifier votre réclamation </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> Titre</label>
+            <input type="text" class ="form-control" id = "titre"
+                [(ngModel)] = "employee.titre" name = "titre">
+        </div>
+    
+        <div class="form-group">
+            <label> Contenu</label>
+            <input type="text" class ="form-control" id = "contenu"
+                [(ngModel)] = "employee.contenu" name = "contenu">
+        </div>
+
+    
+        <div class="form-group">
+            <label> ImageUrl</label>
+            <input type="file" class ="form-control" id = "imageUrl"
+                [(ngModel)] = "employee.imageUrl" name = "imageUrl">
+        </div>
+        <div class="form-group">
+            <label> Service</label>
+            <select required type="text" 
+            class ="form-control" 
+            [(ngModel)] = "employee.service"
+            name = "service" >
+            <option value="" disabled>quel service voulez vous réclamer? </option>
+        
+            <option *ngFor="let c of products" >{{ c.nom }}</option>
+            </select>
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 

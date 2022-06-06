@@ -1,0 +1,27 @@
+<h2> Consulter vos réclamations </h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Titre</th>
+            <th> Contenu </th>
+            <th> Capture</th>
+            <th> Date</th>
+            <th> Status</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let reclamation of rec" >
+            <td> {{ reclamation.titre }} </td>
+            <td> {{ reclamation.contenu }} </td>
+            <td> <img [src]="url" class="img-responsive" height="50" width="50"></td>
+            <td> {{ reclamation.date_creation }} </td>
+            <td> {{ reclamation.status }} </td>
+            <td>
+                <button (click) = "updateEmployee(reclamation.id)" class = "btn btn-warning"> modifier</button>
+                <button (click) = "deleteEmployee(reclamation.id)" class = "btn btn-danger" style="margin-left: 10px"> supprimer</button>
+                <button (click) = "employeeDetails(reclamation.id)" class = "btn btn-info" style="margin-left: 10px"> détails</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
